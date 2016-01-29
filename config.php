@@ -41,9 +41,9 @@ define("NOTIFY_ACTIVATED", 1);                // send notifications for first an
 define("NOTIFY_ACTIVATED_AMOUNT", 2);         // send notifications for $notify_amount_group only
 
 // sending crash log ended in failure error codes
-define("FAILURE_DATABASE_NOT_AVAILABLE", -1);           // database cannot be accessed, check hostname, username, password and database name settings in config.php 
-define("FAILURE_INVALID_INCOMING_DATA", -2);           	// incoming data may not be added, because e.g. bundle identifier wasn't found 
-define("FAILURE_INVALID_POST_DATA", -3);           		// the post request didn't contain valid data 
+define("FAILURE_DATABASE_NOT_AVAILABLE", -1);           // database cannot be accessed, check hostname, username, password and database name settings in config.php
+define("FAILURE_INVALID_INCOMING_DATA", -2);           	// incoming data may not be added, because e.g. bundle identifier wasn't found
+define("FAILURE_INVALID_POST_DATA", -3);           		// the post request didn't contain valid data
 define("FAILURE_SQL_SEARCH_APP_NAME", -10);    			// SQL for finding the bundle identifier in the database failed
 define("FAILURE_SQL_FIND_KNOWN_PATTERNS", -11); 		// SQL for getting all the known bug patterns for the current app version in the database failed
 define("FAILURE_SQL_UPDATE_PATTERN_OCCURANCES", -12); 	// SQL for updating the occurances of this pattern in the database failed
@@ -69,9 +69,9 @@ define("SEARCH_TYPE_USERNAME", 5);			            // Search in the User Name
 
 $statusversions = array(0 => 'Unknown', 1 => 'In development', 2 => 'Submitted', 3 => 'Available', 4 => 'Discontinued');
 
-$server = '127.0.0.1';                    // database server hostname
-$loginsql = 'root';                // username to access the database
-$passsql = '';                 // password for the above username
+$server = 'localhost';                    // database server hostname
+$loginsql = 'crashreport';                // username to access the database
+$passsql = 'reportcrash';                 // password for the above username
 $base = 'crashreport';                        // database name which contains the below listed tables
 
 $dbcrashtable = 'crash';                        // contains the actual crash log data
@@ -95,8 +95,8 @@ $mail_activated = true;					        // activate email notifications
 $mail_addresses = '';                           // , separated mail addresses to send notification emails to
                                                 // can also be set per app, this is a global setting also effective when acceptallapps is true
 
-$mail_from = 'darwin@jclive.cn';           // sender address used for notification emails
-$crash_url = 'http://127.0.0.1/crashreport/';      // if the mail should contain a link to the crash, at the base url like http://www.yourserver.com/
+$mail_from = 'dawenhing@126.com';           // sender address used for notification emails
+$crash_url = 'https://www.dawenhing.top/crashreport/admin/crashes.php?';      // if the mail should contain a link to the crash, at the base url like http://www.yourserver.com/
                                                 // "admin/crashes.php?..." with a direct link to the crash group will be added automatically!
 
 $notify_amount_group = 10;                      // the amount of crashes found for a type which invokes a push notification to be send, 1 to deactivate
